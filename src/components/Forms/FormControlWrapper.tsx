@@ -16,6 +16,7 @@ export interface FieldConfig {
   rules?: any;
   type?:
     | "text"
+    | "checkbox"
     | "date"
     | "dropdown"
     | "number"

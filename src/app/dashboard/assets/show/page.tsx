@@ -341,7 +341,7 @@ const Page = () => {
                         : "Waiting for Acceptance",
                     },
                     {
-                      label: "Agreement Accepted Date",
+                      label: "Agreement Accepted Datetime",
                       value: getFormattedDateWithTime(
                         asset?.agreement_accepted_datetime
                       ),

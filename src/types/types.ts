@@ -152,6 +152,11 @@ export interface Organization {
   active?: boolean;
   created_at?: string;
   updated_at?: string;
+  settings: OrganizationSettings;
+}
+
+export interface OrganizationSettings {
+  add_all_customers_in_email: boolean;
 }
 
 export interface User {

@@ -40,6 +40,7 @@ const Item = () => {
         address: org.address,
         country: org.country,
         active: org.active,
+        settings: org.settings
       });
     }
   }, [formLoading, org]);

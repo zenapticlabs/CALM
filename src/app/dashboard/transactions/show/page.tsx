@@ -80,12 +80,12 @@ const TransactionShow = () => {
   const getButtonProps = (editButtonProps: any, refreshButtonProps: any) => {
     return (
       <div className="flex gap-2 px-12">
-        {transaction?.transaction_status == "Completed" && (
+        {/* {transaction?.transaction_status == "Completed" && ( */}
           <Button onClick={resendEmailBtnClick} sx={editRefineBtnStyle}>
             <AutorenewIcon />
             Resend email
           </Button>
-        )}
+        {/* )} */}
         {transaction?.transaction_status != "Completed" && (
           // permissionsData?.update &&
           <>

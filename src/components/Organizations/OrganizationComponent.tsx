@@ -73,7 +73,7 @@ const OrganizationComponent = () => {
     handleOpenConfirmModal();
   };
   const handleSwitch = async () => {
-    const realAPI_URL = "https://license-management-server.vercel.app/api";
+    const realAPI_URL = "https://calmtpy.pfuapps.com/api";
     const API_URL = process.env.API_URL;
     const response = await fetch(`${API_URL ?? realAPI_URL}/authenticate`, {
       method: "POST",
@@ -93,21 +93,6 @@ const OrganizationComponent = () => {
 
   const columns = useMemo<MRT_ColumnDef<any>[]>(
     () => [
-      //   {
-      //     accessorKey: "isCurrent",
-      //     header: "Switch",
-      //     size: 100,
-      //     Cell: ({ renderedCellValue, row }) => (
-      //       <div
-      //         onClick={() => handleClickSwitch(row.original)}
-      //         className={`${renderedCellValue ? "border-[#11ba82]" : "border-[#b5b7ba]"} w-5 h-5 p-1 rounded-full border-2 cursor-pointer hover:border-[#11ba82]`}
-      //       >
-      //         {renderedCellValue && (
-      //           <div className="w-full h-full rounded-full bg-[#11ba82]"></div>
-      //         )}
-      //       </div>
-      //     ),
-      //   },
       {
         accessorKey: "organization_code",
         header: "Organization Code",
@@ -144,28 +129,6 @@ const OrganizationComponent = () => {
           </Box>
         ),
       },
-      //   {
-      //     accessorKey: "actions",
-      //     header: "Action",
-      //     size: 100,
-      //     enableSorting: false,
-      //     pin: "right",
-      //     Cell: ({ row }) => {
-      //       return (
-      //         <div className="w-full h-full">
-      //           <div className="flex gap-1">
-      //             <IconButton
-      //               onClick={() => handleEditClick(row.original)}
-      //               size="small"
-      //               disabled={!row.original?.isCurrent}
-      //             >
-      //               <EditOutlinedIcon fontSize="inherit" />
-      //             </IconButton>
-      //           </div>
-      //         </div>
-      //       );
-      //     },
-      //   },
     ],
     []
   );

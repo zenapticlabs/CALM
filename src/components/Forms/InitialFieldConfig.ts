@@ -5,6 +5,7 @@ export interface InitialFieldConfig {
   required?: "text" | "email" | "phone" | "password" | "number" | "website" | "special" | "type";
   type?:
     | "text"
+    | "checkbox"
     | "date"
     | "dropdown"
     | "number"

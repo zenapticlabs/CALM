@@ -31,6 +31,12 @@ const OrganizationEditFormInitialFields: InitialFieldConfig[] = [
     name: "active",
     type: "switch",
   },
+  {
+    name: "settings.add_all_customers_in_email",
+    label: "Include Billing customer and Reseller in the CC of email",
+    size: 2,
+    type: "checkbox"
+  },
 ];
 
 const OrganizationCreateInitialFields: InitialFieldConfig[] = [

@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,8 +23,12 @@
       }
     ],
     "paths": {
-      "@*": ["./src/*"],
-      "@pages/*": ["./pages/*"]
+      "@*": [
+        "./src/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ]
     },
     "incremental": true
   },
@@ -29,7 +37,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/transactions/route.ts"
+    "src/app/api/transactions/route.ts",
+    "dist/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

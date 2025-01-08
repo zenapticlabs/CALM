@@ -8,6 +8,7 @@ import GeneralSwitch from "@components/Input/GeneralSwitch";
 import AutoComplete from "@components/Input/AutoComplete";
 import AddressSelect from "@components/Input/AddressSelect";
 import PhoneInput from "@components/Input/PhoneInput";
+import GeneralCheckbox from "@components/Input/Checkbox";
 
 interface GenericFormProps {
   control: any;
@@ -62,7 +63,7 @@ const GenericForm: React.FC<GenericFormProps> = ({
                           label={field.label}
                           required={field.required}
                           disabled={field.disabled}
-                          // placeholder={field.placeholder}
+                        // placeholder={field.placeholder}
                         />
                       );
                     case "switch":
@@ -72,7 +73,7 @@ const GenericForm: React.FC<GenericFormProps> = ({
                           type={field.type}
                           label={field.label}
                           disabled={field.disabled}
-                          // placeholder={field.placeholder}
+                        // placeholder={field.placeholder}
                         />
                       );
                     case "date":
@@ -100,7 +101,7 @@ const GenericForm: React.FC<GenericFormProps> = ({
                           dependency={field.dependency}
                           required={field.required}
                           watch={watch}
-                          // fetchOptions={field.fetchOptions}
+                        // fetchOptions={field.fetchOptions}
                         />
                       );
                     case "autocomplete":
@@ -117,9 +118,24 @@ const GenericForm: React.FC<GenericFormProps> = ({
                           elseKey={field?.elseKey}
                           disabled={field.disabled}
                           required={field.required}
-                          // fetchOptions={field.fetchOptions}
+                        // fetchOptions={field.fetchOptions}
                         />
                       );
+                    case "checkbox":
+                      return (
+                        <GeneralCheckbox
+                          {...fieldProps}
+                          label={field.label}
+                          placeholder={field.placeholder}
+                          name2={field.name2}
+                          options={field.options || []}
+                          resource={field.resource}
+                          valueKey={field.valueKey}
+                          labelKey={field.labelKey}
+                          elseKey={field?.elseKey}
+                          disabled={field.disabled}
+                          required={field.required} />
+                      )
                     default:
                       return <div />;
                   }

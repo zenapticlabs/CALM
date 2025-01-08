@@ -109,7 +109,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ transaction }) => {
               : "",
         },
         {
-          label: "Agreement Accepted Date",
+          label: "Agreement Accepted Datetime",
           value: transaction?.asset?.agreement_accepted_datetime
             ? getFormattedDateWithTime(
                 transaction?.asset?.agreement_accepted_datetime

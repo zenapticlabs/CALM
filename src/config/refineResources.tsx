@@ -274,7 +274,7 @@ export const dashboardResources: ResourceProps[] = [
   },
   {
     name: "orgs",
-    list: "/dashboard/orgs",
+    list: "/dashboard/orgs/list",
     create: "/dashboard/orgs/create",
     edit: "/dashboard/orgs/edit",
     meta: {

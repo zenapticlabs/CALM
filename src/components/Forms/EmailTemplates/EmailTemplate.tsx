@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { EmailTemplate } from "@/types/types";
 import GeneralInput from "@components/Input/GeneralInput";
 import Accordion from "@mui/material/Accordion";
@@ -7,6 +7,7 @@ import Editor from "@monaco-editor/react";
 import * as monaco from "monaco-editor";
 import FormControlWrapper from "../FormControlWrapper";
 import Dropdown from "@components/Input/Dropdown";
+import ErrorIcon from '@mui/icons-material/Error';
 
 interface EmailTemplateComponentProps {
   template: EmailTemplate | null;
@@ -19,6 +20,8 @@ interface EmailTemplateComponentProps {
 
 const editorOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
   lineNumbers: "off",
+  detectIndentation: false,
+  tabSize: 2,
 };
 
 const handleEditorDidMount = (editor: any, monaco: any) => {
@@ -39,8 +42,21 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
   reset,
   setEmailBody,
 }) => {
+  const [htmlContent, setHtmlContent] = useState<string>(template?.body || "");
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const updateIframeContent = () => {
+    if (iframeRef.current) {
+      const iframeDoc = iframeRef.current.contentDocument || iframeRef.current.contentWindow?.document;
+      if (iframeDoc) {
+        iframeDoc.open();
+        iframeDoc.write(htmlContent);
+        iframeDoc.close();
+      }
+    }
+  };
   const onEmailBodyChange = (value: string) => {
     setEmailBody(value);
+    setHtmlContent(value);
   };
 
   const type = watch("type");
@@ -57,6 +73,15 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
       }));
     }
   }, [type, reset, template]);
+
+  useEffect(() => {
+    updateIframeContent();
+  }, [htmlContent]);
+
+  const VariableBadge = ({ text }: { text: string }) => (
+    <span className="text-[0.6rem] bg-[#d5dce3] rounded-full py-0.5 px-2">{`{${text}}`}</span>
+  );
+
 
   return (
     <Accordion
@@ -89,6 +114,31 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
                 type="text"
                 required={true}
                 defaultValue={template?.subject}
+              />
+            )}
+          </FormControlWrapper>
+          <div className="pl-2 mt-1 text-[0.75rem]">
+            Available placeholder parameters:{" "}
+            <VariableBadge text="partner_name" />,{" "}
+            <VariableBadge text="partner_firstname" />,{" "}
+            <VariableBadge text="partner_lastname" />,{" "}
+            <VariableBadge text="product_name" />,{" "}
+            <VariableBadge text="license_code" />
+          </div>
+          <FormControlWrapper
+            name="from_email"
+            control={control}
+            rules={{ required: "From email is required" }}
+            error={errors.from_email?.message?.toString()}
+          >
+            {(field) => (
+              <GeneralInput
+                {...field}
+                id="from_email"
+                label="From"
+                type="text"
+                required={true}
+                defaultValue={template?.from_email}
               />
             )}
           </FormControlWrapper>
@@ -173,7 +223,6 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
                     { value: "license_created", label: "License Created" },
                     { value: "license_revoked", label: "License Revoked" },
                     { value: "license_renewed", label: "License Renewed" },
-                    { value: "terms_and_conditions", label: "Terms and Conditions" },
                   ]}
                 />
               )}
@@ -183,8 +232,6 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
             <FormControlWrapper
               name="product_type"
               control={control}
-              // rules={{ required: "Type is required" }}
-              error={errors.type?.message?.toString()}
             >
               {(field) => (
                 <Dropdown
@@ -196,9 +243,7 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
                   resource="lookups/PRODUCT_TYPE/values"
                   valueKey="value"
                   labelKey="value"
-                  required={false}
                   selectNoneOption={true}
-                  // required={true}
                 />
               )}
             </FormControlWrapper>
@@ -214,13 +259,17 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
               )}
             </FormControlWrapper>
           </div>
-          <div className="">
+          <div className="flex flex-col">
             <div className="bg-[#dfe6ec] rounded-t-lg border-r-ful font-medium text-sm p-4 text-[#0000009c]">
-              Body(HTML) <span className="text-red-500">*</span>
+              Body(HTML)
+            </div>
+            <div className="px-2 py-2 mb-2 bg-[#fdedef] text-black flex gap-2 items-center text-sm">
+              <span className="text-[#ef4d61] pb-0.5"><ErrorIcon /></span>
+              Please avoid using {'<style>'} tags within this HTML template. Instead, use inline CSS only
             </div>
             <Editor
-              defaultValue={template?.body || "<body></body>"}
-              height="300px"
+              defaultValue={template?.body}
+              height="500px"
               defaultLanguage="html"
               options={editorOptions}
               theme="custom-theme"
@@ -229,9 +278,24 @@ const EmailTemplateComponent: React.FC<EmailTemplateComponentProps> = ({
             />
             <div className="pl-2 mt-1 text-[0.75rem]">
               Available placeholder parameters:{" "}
-              <span className="text-[0.6rem] bg-[#d5dce3] rounded-full py-0.5 px-2">{`{ APP_NAME }`}</span>
-              ,{" "}
-              <span className="text-[0.6rem] bg-[#d5dce3] rounded-full py-0.5 px-2">{`{ APP_URL }`}</span>
+              <VariableBadge text="partner_name" />,{" "}
+              <VariableBadge text="partner_firstname" />,{" "}
+              <VariableBadge text="partner_lastname" />,{" "}
+              <VariableBadge text="product_name" />,{" "}
+              <VariableBadge text="license_code" />,{" "}
+              <VariableBadge text="terms_and_conditions_link" />
+            </div>
+          </div>
+          <div className="flex-grow">
+            <div className="bg-[#dfe6ec] rounded-t-lg border-r-ful font-medium text-sm p-4 text-[#0000009c]">
+              HTML Preview
+            </div>
+            <div className="flex-grow p-4 bg-white">
+              <iframe
+                ref={iframeRef}
+                title="HTML Preview"
+                style={{ width: "100%", height: "500px", border: "none" }}
+              />
             </div>
           </div>
         </div>
