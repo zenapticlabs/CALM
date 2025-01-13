@@ -229,7 +229,7 @@ const Page: React.FC = () => {
                 <div>
                   <div className="text-sm text-[#10132b] mt-2.5">
                     I agree to the{" "}
-                    <Link href="#" className="underline" target="_blank">
+                    <Link href="#" className="underline" target="https://www.pfu-us.ricoh.com/paperstream-capture-pro-subscription-agreement">
                       Terms and Conditions
                     </Link>{" "}
                     and authorize the use of the provided information as

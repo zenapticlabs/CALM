@@ -7,7 +7,7 @@ import axios, { AxiosError } from "axios";
 
 // const localAPI_URL = "http://localhost:3000/api";
 // const virtualAPI_URL = "https://lic-refine.vercel.app/api";
-const realAPI_URL = "https://calmtpy.pfuapps.com/api";
+const realAPI_URL = "http://localhost:8000/api";
 
 const API_URL = process.env.API_URL;
 

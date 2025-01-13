@@ -18,7 +18,7 @@ const Page: React.FC = () => {
     mode: "onChange",
     reValidateMode: "onSubmit"
   });
-  const realAPI_URL = "https://calmtpy.pfuapps.com/api";
+  const realAPI_URL = "http://localhost:8000/api";
   const API_URL = process.env.API_URL;
   const [loading, setLoading] = useState(false);
   const organizations = useStore().organizations;
