@@ -1,16 +1,14 @@
 "use client";
 import { MRT_ColumnDef } from "material-react-table";
-import React, { useEffect, useMemo, useState } from "react";
-import { useCustom, useNavigation, useOne, useTable } from "@refinedev/core";
+import React, { useMemo, useState } from "react";
+import { useNavigation, useTable } from "@refinedev/core";
 import Loader from "@components/common/Loader";
 import GenericTable from "@components/Table/GenericTable";
 import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
-import StateComponent from "@components/common/StateComponent";
 import { Report } from "@/types/types";
 import { getFormattedDate } from "@utils/utilFunctions";
 import DownloadIcon from '@mui/icons-material/Download';
-import { realAPI_URL } from "@data/UtilData";
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const HomePage: React.FC = () => {
   const {
     tableQueryResult: { data, isLoading, refetch },
@@ -38,7 +36,7 @@ const HomePage: React.FC = () => {
     const title = report.title;
     try {
       const token = localStorage.getItem("accessToken");
-      const response = await fetch(`${realAPI_URL}/reports/${id}`, {
+      const response = await fetch(`${API_URL}/reports/${id}`, {
         method: 'GET', // Specify the method if needed
         headers: {
           'Authorization': `Bearer ${token}`, // Replace with your actual token

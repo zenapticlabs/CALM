@@ -2,16 +2,14 @@
 
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import DetailsIcon from "@mui/icons-material/Details";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import { GenericFormProps } from "../FormControlWrapper";
-import GenericForm from "../GenericForm";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TransactionPartnerFormFields from "../Partners/TransactionPartnerFormFields";
 import CustomerForm from "../Transactions/CustomerForm";
 

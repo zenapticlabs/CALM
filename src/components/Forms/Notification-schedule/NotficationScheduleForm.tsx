@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "@refinedev/react-hook-form";
 import { Email_Schedule, EmailTemplate } from "@/types/types";
-import DatePicker from "@components/Input/DatePicker";
-import Dropdown from "@components/Input/Dropdown";
 import FormControlWrapper from "../FormControlWrapper";
 import { useCreate, useList, useNavigation, useUpdate } from "@refinedev/core";
-import { Button, Collapse, FormControlLabel } from "@mui/material";
+import { Button } from "@mui/material";
 import { modalOkBtnStyle } from "@data/MuiStyles";
-import GeneralSwitch, { IOSSwitch } from "@components/Input/GeneralSwitch";
 import Loader from "@components/common/Loader";
 import MuiDatePicker from "@components/Input/MuiDatePicker";
 import MuiTimePicker from "@components/Input/MuiTimePicker";

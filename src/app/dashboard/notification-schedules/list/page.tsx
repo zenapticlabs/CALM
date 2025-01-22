@@ -1,9 +1,9 @@
 "use client";
 import React, { useMemo } from "react";
 import { useTable, useNavigation } from "@refinedev/core";
-import { Email_Schedule, Product } from "@/types/types";
+import { Email_Schedule } from "@/types/types";
 import GenericTable from "@components/Table/GenericTable";
-import { MRT_ColumnDef, MRT_SortingState } from "material-react-table";
+import { MRT_ColumnDef } from "material-react-table";
 import Loader from "@components/common/Loader";
 import { Box } from "@mui/material";
 import { ScheduleActiveColor } from "@data/ColorData";

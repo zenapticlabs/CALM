@@ -1,13 +1,9 @@
-import Loader from "@components/common/Loader";
-import { predefinedRanges } from "@data/UtilData";
 import { CircularProgress } from "@mui/material";
 import { useList } from "@refinedev/core";
 import { ApexOptions } from "apexcharts";
-import { subDays } from "date-fns";
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
-import { DateRangePicker, Stack } from "rsuite";
 interface ChartThreeState {
   series: number[];
 }
@@ -17,8 +13,8 @@ const options: ApexOptions = {
     fontFamily: "Satoshi, sans-serif",
     type: "donut",
   },
-  colors: ["#3c50e0", "#f9597c", "#6c757d"],
-  labels: ["Complete", "Error", "Null"],
+  colors: ["#3c50e0", "#dc3545", "#fac107"],
+  labels: ["Completed", "Error", "Waiting for Acceptance"],
   legend: {
     show: true,
     position: "bottom",

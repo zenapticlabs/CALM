@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import ChartOne from "./ChartOne";
 import dynamic from "next/dynamic";
-import { DateRangePicker, Stack } from "rsuite";
+import { DateRangePicker } from "rsuite";
 import { subDays } from "date-fns";
 import { predefinedRanges } from "@data/UtilData";
 import { FaCalendar } from "react-icons/fa";

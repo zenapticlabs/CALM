@@ -5,7 +5,6 @@ import { BaseInputProps } from "./InputProps";
 import { useList } from "@refinedev/core";
 import {
   FormControl,
-  makeStyles,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -45,7 +44,7 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
 
     const [loading, setLoading] = useState<boolean>(false);
 
-    const [dependency, setDependency] = useState<String>();
+    const [dependency, setDependency] = useState<string>();
 
     if (resource && valueKey && labelKey) {
       if (props.dependency) {

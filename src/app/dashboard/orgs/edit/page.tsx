@@ -1,7 +1,7 @@
 "use client";
 
 import ArrowIcon from "@/assets/icons/arrow.svg?icon";
-import { Organization, Product } from "@/types/types";
+import { Organization } from "@/types/types";
 import GenericForm from "@components/Forms/GenericForm";
 import { OrganizationEditFormFields } from "@components/Forms/Organizations/OrganizationFormFields";
 import Loader from "@components/common/Loader";

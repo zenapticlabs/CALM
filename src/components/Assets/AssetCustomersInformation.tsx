@@ -1,7 +1,6 @@
 "use client";
 
-import { Address, Asset, Contact, Partner } from "@/types/types";
-import GeneralInformation from "@components/common/View/GeneralInformation";
+import { Asset, Contact, Partner } from "@/types/types";
 interface CustomersInformationProps {
   asset?: Asset;
 }

@@ -3,9 +3,9 @@
 import { Reference, ReferenceCode } from "@/types/types";
 import Loader from "@components/common/Loader";
 import GenericTable from "@components/Table/GenericTable";
-import { editRefineBtnStyle, refreshRefineBtnStyle } from "@data/MuiStyles";
+import { editRefineBtnStyle } from "@data/MuiStyles";
 import { useNavigation, useParsed, useShow, useTable } from "@refinedev/core";
-import { EditButton, RefreshButton, Show } from "@refinedev/mui";
+import { EditButton, Show } from "@refinedev/mui";
 import {
   convertSortingStateToCrudSort,
   getFormattedDate,

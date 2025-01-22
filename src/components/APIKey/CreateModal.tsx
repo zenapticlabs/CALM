@@ -10,7 +10,7 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { Organization, User } from "../../types/types";
+import { Organization } from "../../types/types";
 import { modalCancelBtnStyle, modalOkBtnStyle } from "@data/MuiStyles";
 import { useList } from "@refinedev/core";
 
@@ -21,7 +21,7 @@ interface CreateModalProps {
 }
 
 const modalStyle = {
-  position: "absolute" as "absolute",
+  position: "absolute" as const,
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",

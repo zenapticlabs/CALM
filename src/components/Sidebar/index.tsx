@@ -6,7 +6,7 @@ import Link from "next/link";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
-import { AdminMenu, CommonMenu, menuGroups } from "@/data/MenuGroupData";
+import { AdminMenu, CommonMenu } from "@/data/MenuGroupData";
 import UserItem from "./UserItem";
 import { useGetIdentity } from "@refinedev/core";
 import { User } from "@/types/types";

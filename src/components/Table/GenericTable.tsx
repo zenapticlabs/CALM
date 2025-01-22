@@ -11,7 +11,7 @@ import {
   type MRT_ColumnDef,
   type MRT_RowData,
 } from "material-react-table";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchInput from "@components/Input/SearchInput";
 import { tableAddButton } from "@data/MuiStyles";
 import AddIcon from "@mui/icons-material/Add";
@@ -60,7 +60,7 @@ const GenericTable = <T extends MRT_RowData>({
   initialSorter,
 }: GenericTableProps<T>) => {
   const handleRowClick = (row: T) => {
-    if (!!onRowClick) {
+    if (onRowClick) {
       onRowClick(row);
     }
   };

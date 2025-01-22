@@ -14,11 +14,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PersonIcon from "@mui/icons-material/Person";
 import { faCubes } from "@fortawesome/free-solid-svg-icons";
 import {
-  faChartBar,
   faCircleInfo,
-  faSignal,
 } from "@fortawesome/free-solid-svg-icons";
-import CustomerInformation from "./CustomerInformation";
 import CustomersInformation from "./CustomersInformation";
 import { Box } from "@mui/material";
 import { TxtStatusColor } from "@data/ColorData";

@@ -3,7 +3,7 @@
 import { Lookup, LookupValue } from "@/types/types";
 import Loader from "@components/common/Loader";
 import GenericTable from "@components/Table/GenericTable";
-import { editRefineBtnStyle, refreshRefineBtnStyle } from "@data/MuiStyles";
+import { editRefineBtnStyle } from "@data/MuiStyles";
 import {
   FormControl,
   MenuItem,
@@ -20,7 +20,7 @@ import {
   useTable,
 } from "@refinedev/core";
 import SaveIcon from "@mui/icons-material/Save";
-import { EditButton, RefreshButton, Show } from "@refinedev/mui";
+import { EditButton, Show } from "@refinedev/mui";
 import { MRT_ColumnDef } from "material-react-table";
 import { useEffect, useMemo, useState, useRef } from "react";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
@@ -608,7 +608,7 @@ const Page = () => {
         getButtonProps(editButtonProps, refreshButtonProps)
       }
     >
-      {isLookupLoading || (lookup.parent_lookup && !parentValue) ? (
+      {isLookupLoading || masterLoading ? (
         <Loader />
       ) : (
         <div>

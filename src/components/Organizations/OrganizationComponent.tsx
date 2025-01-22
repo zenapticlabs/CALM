@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, IconButton } from "@mui/material";
+import { Box } from "@mui/material";
 
 import {
   HttpError,
@@ -35,8 +35,6 @@ const OrganizationComponent = () => {
   const { push } = useNavigation();
   const [orgData, setOrgData] = useState<any[]>();
   const [loading, setLoading] = useState(true);
-  const [openDrawer, setOpenDrawer] = useState(false);
-  const [clickedOrg, setClickedOrg] = useState<Organization | null>(null);
 
   useEffect(() => {
     if (identity && orgs) {
@@ -48,47 +46,10 @@ const OrganizationComponent = () => {
       );
     }
   }, [identity, orgs]);
-
-  const [openConfirmModal, setOpenConfirmModal] = useState(false);
-  const handleOpenConfirmModal = () => setOpenConfirmModal(true);
-  const handleCloseConfirmModal = () => setOpenConfirmModal(false);
-
-  const handleEditClick = (row: Organization) => {
-    // setClickedOrg(row);
-    // setOpenDrawer(true);
-
-    push(`/dashboard/orgs/edit?organization_code=${row.organization_code}`);
-  };
+  
   const handleCreate = () => {
     // setOpenDrawer(true)
     push("/dashboard/orgs/create");
-  };
-  const handleClose = () => {
-    refetch();
-    setClickedOrg(null);
-    setOpenDrawer(false);
-  };
-  const handleClickSwitch = (row: Organization) => {
-    setClickedOrg(row);
-    handleOpenConfirmModal();
-  };
-  const handleSwitch = async () => {
-    const realAPI_URL = "http://localhost:8000/api";
-    const API_URL = process.env.API_URL;
-    const response = await fetch(`${API_URL ?? realAPI_URL}/authenticate`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("tempToken")}`,
-      },
-      body: JSON.stringify({ organization: clickedOrg?.organization_code }),
-    });
-    if (response.ok) {
-      const data: any = await response.json();
-      localStorage.setItem("accessToken", data.access);
-      localStorage.setItem("refreshToken", data.refresh);
-      window.location.reload();
-    }
   };
 
   const columns = useMemo<MRT_ColumnDef<any>[]>(

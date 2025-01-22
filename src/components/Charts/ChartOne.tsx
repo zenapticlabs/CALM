@@ -4,11 +4,10 @@ import { ApexOptions } from "apexcharts";
 import "./styles.css";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { DateRangePicker, Stack } from "rsuite";
-import { predefinedStyle, predefinedRanges } from "@data/UtilData";
+import { DateRangePicker } from "rsuite";
+import { predefinedRanges } from "@data/UtilData";
 import { subDays } from "date-fns";
 import { useList } from "@refinedev/core";
-import Loader from "@components/common/Loader";
 import {
   getDayStrings,
   getMonthStrings,

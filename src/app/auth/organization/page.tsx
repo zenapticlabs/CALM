@@ -18,15 +18,14 @@ const Page: React.FC = () => {
     mode: "onChange",
     reValidateMode: "onSubmit"
   });
-  const realAPI_URL = "http://localhost:8000/api";
-  const API_URL = process.env.API_URL;
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const [loading, setLoading] = useState(false);
   const organizations = useStore().organizations;
   const { push } = useNavigation();
   const onSubmit = async (data: any) => {
     setLoading(true);
     const orgForm = data as FormData;
-    const response = await fetch(`${API_URL ?? realAPI_URL}/authenticate`, {
+    const response = await fetch(`${API_URL}/authenticate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

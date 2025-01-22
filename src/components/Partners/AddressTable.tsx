@@ -1,9 +1,9 @@
 "use client";
 
 import { useNavigation } from "@refinedev/core";
-import { Address, Customer } from "../../types/types";
+import { Address } from "../../types/types";
 import React, { useMemo } from "react";
-import { MRT_ColumnDef, MRT_SortingState } from "material-react-table";
+import { MRT_ColumnDef } from "material-react-table";
 import GenericTable from "@components/Table/GenericTable";
 import StateComponent from "@components/common/StateComponent";
 interface AddressTableProps {

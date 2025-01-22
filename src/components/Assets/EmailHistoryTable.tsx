@@ -1,6 +1,6 @@
 "use client";
 
-import { EmailHistory, Transaction } from "@/types/types";
+import { EmailHistory } from "@/types/types";
 import GenericTable from "@components/Table/GenericTable";
 import { type MRT_ColumnDef } from "material-react-table";
 import { useEffect, useMemo, useState } from "react";
@@ -16,7 +16,7 @@ interface EmailHistoryTableProps {
 }
 
 export const modalStyle = {
-  position: "absolute" as "absolute",
+  position: "absolute" as const,
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",

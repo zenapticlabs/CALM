@@ -2,7 +2,6 @@ import { Refine } from "@refinedev/core";
 import { RefineKbarProvider } from "@refinedev/kbar";
 import routerProvider from "@refinedev/nextjs-router";
 import { Metadata } from "next";
-import { cookies } from "next/headers";
 import { Suspense } from "react"
 import { dataProvider } from "@providers/data-provider";
 import { authProvider } from "@providers/auth-provider";

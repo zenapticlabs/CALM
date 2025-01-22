@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import { Country, State, City } from "country-state-city";
-import { OptionProps } from "react-select";
-import { ICountry } from "country-state-city";
 import { Autocomplete, TextField } from "@mui/material";
 import FormControlWrapper, {
   FieldConfig,

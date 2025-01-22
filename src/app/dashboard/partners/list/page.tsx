@@ -1,7 +1,7 @@
 "use client";
 
 import { useNavigation, useTable } from "@refinedev/core";
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { MRT_ColumnDef, MRT_SortingState } from "material-react-table";
 import GenericTable from "@components/Table/GenericTable";
 import Loader from "@components/common/Loader";
@@ -9,14 +9,10 @@ import { convertSortingStateToCrudSort } from "@utils/utilFunctions";
 import { Partner } from "@/types/types";
 import StateComponent from "@components/common/StateComponent";
 import {
-  FormControl,
-  MenuItem,
-  Select,
   SelectChangeEvent,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
-import { partnerTypes } from "@data/PartnerTypeData";
 import { DefaultPageSize } from "@data/UtilData";
 
 const Page = () => {

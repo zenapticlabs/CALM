@@ -1,15 +1,14 @@
 "use client";
 
 import ArrowIcon from "@/assets/icons/arrow.svg?icon";
-import { Product, ReferenceCode } from "@/types/types";
+import { ReferenceCode } from "@/types/types";
 import GenericForm from "@components/Forms/GenericForm";
 import { ReferenceCodeFormFields } from "@components/Forms/References/ReferenceCodeFormFields";
 import Loader from "@components/common/Loader";
 import { sendEmailBtnStyle } from "@data/MuiStyles";
-import { useBack, useCreate, useList, useNavigation, useParsed } from "@refinedev/core";
+import { useBack, useCreate, useNavigation, useParsed } from "@refinedev/core";
 import { Create, SaveButton } from "@refinedev/mui";
 import { useForm } from "@refinedev/react-hook-form";
-import { useEffect } from "react";
 
 const Item = () => {
   const { params } = useParsed();

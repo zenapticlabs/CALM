@@ -1,9 +1,9 @@
 "use client";
 import React, { useMemo } from "react";
-import { useNavigation, useTable, useDelete } from "@refinedev/core";
+import { useNavigation, useTable } from "@refinedev/core";
 import { Reference } from "@/types/types";
 import GenericTable from "@components/Table/GenericTable";
-import { MRT_ColumnDef, MRT_SortingState } from "material-react-table";
+import { MRT_ColumnDef } from "material-react-table";
 import Loader from "@components/common/Loader";
 import StateComponent from "@components/common/StateComponent";
 import FindInPageRoundedIcon from "@mui/icons-material/FindInPageRounded";

@@ -1,6 +1,6 @@
 export const timeZones = () =>{
 
-    var data = [
+    const data = [
         {
           "value": "Dateline Standard Time",
           "abbr": "DST",

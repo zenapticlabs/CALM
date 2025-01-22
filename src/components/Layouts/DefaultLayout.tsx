@@ -1,11 +1,9 @@
 "use client";
-import React, { useState, ReactNode, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import { IconButton } from "@mui/material";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import {
-  Authenticated,
-  useGetIdentity,
   useIsAuthenticated,
 } from "@refinedev/core";
 import { redirect, usePathname } from "next/navigation";

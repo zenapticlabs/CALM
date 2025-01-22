@@ -2,7 +2,6 @@
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 import ControlCameraIcon from '@mui/icons-material/ControlCamera';

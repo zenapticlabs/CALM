@@ -3,14 +3,12 @@
 import ArrowIcon from "@/assets/icons/arrow.svg?icon";
 import { Lookup } from "@/types/types";
 import GenericForm from "@components/Forms/GenericForm";
-import { LookupFormFields } from "@components/Forms/Lookups/LookupFormFields";
 import { ReportFormFields } from "@components/Forms/Reports/ReportFormFields";
 import Loader from "@components/common/Loader";
 import { sendEmailBtnStyle } from "@data/MuiStyles";
 import { useBack } from "@refinedev/core";
 import { Create, SaveButton } from "@refinedev/mui";
 import { useForm } from "@refinedev/react-hook-form";
-import { useEffect } from "react";
 
 const Item = () => {
   const {

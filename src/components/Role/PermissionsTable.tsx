@@ -1,6 +1,6 @@
 // PermissionsTable.tsx
 import React from "react";
-import { Checkbox, Divider } from "@mui/material";
+import { Checkbox } from "@mui/material";
 import { Permission } from "@/types/types";
 
 interface PermissionsTableProps {

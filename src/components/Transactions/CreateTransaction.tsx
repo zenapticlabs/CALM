@@ -5,7 +5,6 @@ import { useForm } from "@refinedev/react-hook-form";
 import { Create, SaveButton } from "@refinedev/mui";
 import {
   Asset,
-  Customer,
   InputTransaction,
   Product,
   Transaction,
@@ -21,7 +20,7 @@ import {
   useNavigation,
   useOne,
 } from "@refinedev/core";
-import { getEndDate, getInputCustomer } from "@utils/utilFunctions";
+import { getEndDate } from "@utils/utilFunctions";
 import TransactionForm from "@components/Forms/Transactions/TransactionForm";
 import { InitialGeneralTxnFormFields } from "@components/Forms/Transactions/GeneralTxnFormField";
 import { InitialLicensingDetailFormFields } from "@components/Forms/Transactions/LicensingDetailFormFields";

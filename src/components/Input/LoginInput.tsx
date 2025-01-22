@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Input } from "@mui/base/Input";
 import { BaseInputProps } from "./InputProps";
 

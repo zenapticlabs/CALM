@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { MRT_SortingState, type MRT_ColumnDef } from "material-react-table";
-import { Asset, Transaction } from "@/types/types";
+import { Asset } from "@/types/types";
 import { useRouter } from "next/navigation";
 import { useTable } from "@refinedev/core";
 import GenericTable from "@components/Table/GenericTable";

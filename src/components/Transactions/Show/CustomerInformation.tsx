@@ -3,7 +3,6 @@
 import {
   Address,
   Contact,
-  Customer,
   Partner,
   Transaction,
 } from "@/types/types";

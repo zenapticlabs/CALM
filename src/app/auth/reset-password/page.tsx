@@ -6,10 +6,9 @@ import { jwtDecode } from "jwt-decode";
 import Loader from "@components/common/Loader";
 import FormControlWrapper from "@components/Forms/FormControlWrapper";
 import GeneralInput from "@components/Input/GeneralInput";
-import EmailIcon from "@/assets/icons/email.svg?icon";
 import PasswordIcon from "@/assets/icons/password.svg?icon";
 import { Button } from "@mui/base";
-import { useRegister, useUpdatePassword } from "@refinedev/core";
+import { useUpdatePassword } from "@refinedev/core";
 interface DecodedToken {
   token_type: string;
   exp: number;

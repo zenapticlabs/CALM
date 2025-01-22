@@ -5,7 +5,7 @@ import { subDays } from "date-fns";
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
-import { DateRangePicker, Stack } from "rsuite";
+import { DateRangePicker } from "rsuite";
 interface ChartThreeState {
   series: number[];
 }

@@ -9,11 +9,10 @@ import {
   StyledTab,
   StyledTabs,
 } from "@components/Tab/CustomizedTab";
-import GenericTable from "@components/Table/GenericTable";
 import { refreshRefineBtnStyle } from "@data/MuiStyles";
 import { Button } from "@mui/material";
 import { useCreate, useNavigation, useParsed, useShow } from "@refinedev/core";
-import { RefreshButton, Show } from "@refinedev/mui";
+import { Show } from "@refinedev/mui";
 import { MRT_ColumnDef } from "material-react-table";
 import { useMemo, useState } from "react";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -22,12 +21,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import {
   faCircleInfo,
-  faCube,
-  faCubes,
   faEnvelope,
   faGlassWater,
   faTentArrowLeftRight,
-  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import StateComponent from "@components/common/StateComponent";
 import {

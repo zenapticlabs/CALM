@@ -2,7 +2,6 @@
 import { Permission, User } from "@/types/types";
 import ProfileForm from "@components/Forms/Profile/ProfileForm";
 import PermissionsTable from "@components/Role/PermissionsTable";
-import { RoleColors } from "@data/ColorData";
 import { useGetIdentity } from "@refinedev/core";
 import { useState } from "react";
 

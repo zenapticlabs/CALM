@@ -2,7 +2,6 @@ import subDays from "date-fns/subDays";
 import { subMonths, subYears } from "date-fns";
 
 export const DefaultPageSize = 12;
-export const realAPI_URL = "http://localhost:8000/api";
 
 export const predefinedStyle = {
   width: "100px",

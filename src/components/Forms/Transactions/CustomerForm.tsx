@@ -1,6 +1,6 @@
 "use client";
 
-import { Address, Contact, Partner, Transaction } from "@/types/types";
+import { Address, Contact, Partner } from "@/types/types";
 import { FieldConfig, GenericFormProps } from "../FormControlWrapper";
 import GenericForm from "../GenericForm";
 import { useEffect, useState } from "react";

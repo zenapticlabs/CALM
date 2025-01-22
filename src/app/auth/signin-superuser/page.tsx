@@ -1,12 +1,9 @@
 "use client";
 import FormControlWrapper from "@components/Forms/FormControlWrapper";
-import useStore from "@hooks/globalStore";
 import { Button } from "@mui/base";
 import { useForm } from "@refinedev/react-hook-form";
 import { useGetIdentity, useLogin, useNavigation } from "@refinedev/core";
-import Dropdown from "@components/Input/Dropdown";
-import { Organization, User } from "@/types/types";
-import { useState } from "react";
+import { User } from "@/types/types";
 import Loader from "@components/common/Loader";
 import Link from "next/link";
 import EmailIcon from "@/assets/icons/email.svg?icon";

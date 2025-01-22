@@ -2,14 +2,9 @@
 
 import nestjsxDataProvider, { axiosInstance } from "@refinedev/nestjsx-crud";
 import { DataProvider } from "@refinedev/core";
-import { stringify } from "querystring";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
-// const localAPI_URL = "http://localhost:3000/api";
-// const virtualAPI_URL = "https://lic-refine.vercel.app/api";
-const realAPI_URL = "http://localhost:8000/api";
-
-const API_URL = process.env.API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 interface PARAMS {
   limit?: number;
@@ -41,7 +36,7 @@ axiosInstance.interceptors.request.use((config) => {
 // export const dataProvider = nestjsxDataProvider(API_URL, axiosInstance);
 
 const customDataProvider: DataProvider = {
-  ...nestjsxDataProvider(API_URL ?? realAPI_URL, axiosInstance),
+  ...nestjsxDataProvider(API_URL, axiosInstance),
   getList: async ({ resource, pagination, filters, sorters, meta }) => {
     let params: any = {};
 
@@ -73,7 +68,7 @@ const customDataProvider: DataProvider = {
     }
 
     const response = await axiosInstance.get(
-      `${API_URL ?? realAPI_URL}/${resource}`,
+      `${API_URL}/${resource}`,
       {
         params: params,
       }
@@ -88,7 +83,7 @@ const customDataProvider: DataProvider = {
     };
   },
   create: async ({ resource, variables }) => {
-    const url = `${API_URL ?? realAPI_URL}/${resource}`;
+    const url = `${API_URL}/${resource}`;
 
     try {
       const { data } = await axiosInstance.post(url, variables);
@@ -106,7 +101,7 @@ const customDataProvider: DataProvider = {
   },
 
   custom: async ({ url, method, payload }) => {
-    let requestUrl = (API_URL ?? realAPI_URL) + `/${url}?`;
+    const requestUrl = (API_URL) + `/${url}?`;
     let axiosResponse;
     switch (method) {
       case "put":

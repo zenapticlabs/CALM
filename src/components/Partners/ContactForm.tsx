@@ -3,7 +3,6 @@ import { useBack, useCreate, useNavigation, useUpdate } from "@refinedev/core";
 import { useForm } from "@refinedev/react-hook-form";
 import { Contact } from "@/types/types";
 import { useEffect } from "react";
-import Loader from "@components/common/Loader";
 import GenericForm from "@components/Forms/GenericForm";
 import { Button } from "@mui/material";
 import { sendEmailBtnStyle } from "@data/MuiStyles";

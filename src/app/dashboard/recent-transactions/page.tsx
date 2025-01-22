@@ -6,7 +6,7 @@ import Loader from "@components/common/Loader";
 import GenericTable from "@components/Table/GenericTable";
 import { MRT_ColumnDef, MRT_SortingState } from "material-react-table";
 import { Box } from "@mui/material";
-import { TxtActionColor, TxtStatusColor, TxtTypeColor } from "@data/ColorData";
+import { TxtStatusColor } from "@data/ColorData";
 import { tagStyle } from "@data/MuiStyles";
 import {
   convertSortingStateToCrudSort,
@@ -15,7 +15,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRightLeft,
-  faTentArrowLeftRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { DefaultPageSize } from "@data/UtilData";
 const Page = () => {

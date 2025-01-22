@@ -1,4 +1,3 @@
-import { colors, duration } from "@mui/material";
 
 export const initialRoundedButton = {
     pl: 2, // Horizontal padding
@@ -169,7 +168,7 @@ export const refreshRefineBtnStyle = {
 
 
 export const modalStyle = {
-    position: 'absolute' as 'absolute',
+    position: 'absolute' as const,
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',

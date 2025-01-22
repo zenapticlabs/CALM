@@ -1,8 +1,6 @@
 "use client";
 
 import { Address, Contact, Partner, Transaction } from "@/types/types";
-import GeneralInformation from "@components/common/View/GeneralInformation";
-import CustomerInformation from "./CustomerInformation";
 interface CustomersInformationProps {
   transaction?: Transaction;
 }

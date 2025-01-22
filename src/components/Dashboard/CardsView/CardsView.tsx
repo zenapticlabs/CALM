@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 import EachCard from "./EachCard";
 import { useOne } from "@refinedev/core";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";

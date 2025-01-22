@@ -5,7 +5,6 @@ import { BaseInputProps } from "./InputProps";
 import { useList } from "@refinedev/core";
 import {
   FormControl,
-  makeStyles,
   MenuItem,
   Select,
   SelectChangeEvent,

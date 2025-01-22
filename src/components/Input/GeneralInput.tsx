@@ -1,8 +1,7 @@
 import React, { ChangeEventHandler, forwardRef } from "react";
 import { Input } from "@mui/base/Input";
 import { BaseInputProps } from "./InputProps";
-import { NumberInput } from "@mui/base/Unstable_NumberInput/NumberInput";
-import { SelectChangeEvent } from "@mui/material"; // Add this import
+// Add this import
 
 const GeneralInput = forwardRef<HTMLInputElement, BaseInputProps>(
   ({ label, onChange, ...props }, ref) => {

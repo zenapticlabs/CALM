@@ -5,7 +5,7 @@ import { EmailTemplate } from "@/types/types";
 import EmailTemplateComponent from "@components/Forms/EmailTemplates/EmailTemplate";
 import Loader from "@components/common/Loader";
 import { sendEmailBtnStyle } from "@data/MuiStyles";
-import { useBack, useParsed, useUpdate } from "@refinedev/core";
+import { useBack, useParsed } from "@refinedev/core";
 import { Edit, SaveButton } from "@refinedev/mui";
 import { useForm } from "@refinedev/react-hook-form";
 import { useEffect, useState } from "react";

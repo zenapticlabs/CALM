@@ -2,9 +2,9 @@
 
 import { Partner } from "@/types/types";
 import Loader from "@components/common/Loader";
-import { editRefineBtnStyle, refreshRefineBtnStyle } from "@data/MuiStyles";
+import { editRefineBtnStyle } from "@data/MuiStyles";
 import { useNavigation, useShow } from "@refinedev/core";
-import { EditButton, RefreshButton, Show } from "@refinedev/mui";
+import { EditButton, Show } from "@refinedev/mui";
 import { useParsed } from "@refinedev/core";
 import {
   CustomTabPanel,
@@ -25,7 +25,6 @@ import {
   faRightLeft,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { partnerTypes } from "@data/PartnerTypeData";
 import GeneralInformation from "@components/common/View/GeneralInformation";
 import StateComponent from "@components/common/StateComponent";
 import Link from "next/link";

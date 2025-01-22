@@ -1,4 +1,4 @@
-import { DateRangePicker, Stack } from "rsuite";
+import { DateRangePicker } from "rsuite";
 import subDays from "date-fns/subDays";
 import { subMonths, subYears } from "date-fns";
 

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Button, Divider, Drawer, FormControl } from "@mui/material";
+import { Button, Divider, FormControl } from "@mui/material";
 import { Role, User, Permission } from "../../types/types";
 import GeneralInput from "@components/Input/GeneralInput";
-import { modalCancelBtnStyle, modalOkBtnStyle } from "@data/MuiStyles";
-import { RoleColors } from "@data/ColorData";
+import { modalOkBtnStyle } from "@data/MuiStyles";
 import { useList, useUpdate } from "@refinedev/core";
 import PermissionsTable from "@components/Role/PermissionsTable";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";

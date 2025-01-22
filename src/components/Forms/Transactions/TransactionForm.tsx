@@ -12,7 +12,6 @@ import { GenericFormProps } from "../FormControlWrapper";
 import GenericForm from "../GenericForm";
 import { GeneralTxnFormFields, getRequiredFields } from "./GeneralTxnFormField";
 import {
-  getFields,
   LicensingDetailFormFields,
 } from "./LicensingDetailFormFields";
 import { useEffect, useState } from "react";

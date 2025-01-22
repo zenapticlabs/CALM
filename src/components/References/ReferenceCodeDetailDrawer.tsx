@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { Button, Drawer, IconButton } from "@mui/material";
-import { useCreate, useDelete, useUpdate } from "@refinedev/core";
+import { Button, Drawer } from "@mui/material";
+import { useCreate, useUpdate } from "@refinedev/core";
 import { useForm } from "@refinedev/react-hook-form";
 import { modalCancelBtnStyle, modalOkBtnStyle } from "@data/MuiStyles";
 import { Reference, ReferenceCode } from "../../types/types";
-import ReferenceForm from "@components/Forms/References/ReferenceForm";
 import ReferenceCodeForm from "@components/Forms/References/ReferenceCodeForm";
 
 interface ReferenceCodeDetailDrawerProps {

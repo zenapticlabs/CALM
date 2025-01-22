@@ -5,7 +5,6 @@ import { BaseInputProps } from "./InputProps";
 import { useTable } from "@refinedev/core";
 import { Autocomplete, Box, TextField } from "@mui/material";
 import { DefaultPageSize } from "@data/UtilData";
-import Loader from "@components/common/Loader";
 
 interface DropdownOption {
   value: string;

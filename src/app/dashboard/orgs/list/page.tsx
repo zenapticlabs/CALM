@@ -1,15 +1,14 @@
 "use client";
 
-import { Box, IconButton } from "@mui/material";
+import { Box } from "@mui/material";
 
 import {
   HttpError,
-  useGetIdentity,
   useList,
   useNavigation,
 } from "@refinedev/core";
-import { Organization, User } from "@/types/types";
-import { useEffect, useMemo, useState } from "react";
+import { Organization } from "@/types/types";
+import { useMemo } from "react";
 import { MRT_ColumnDef } from "material-react-table";
 import { ProductActiveColor } from "@data/ColorData";
 import Loader from "@components/common/Loader";

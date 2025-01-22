@@ -4,8 +4,7 @@ import useStore from "@hooks/globalStore";
 import { AuthProvider } from "@refinedev/core";
 import { Organization, Permission, Role, User } from "@/types/types";
 import crypto from "crypto";
-const realAPI_URL = "http://localhost:8000/api";
-const API_URL = process.env.API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export interface LoginResponse {
   temp_access: string;
@@ -73,7 +72,8 @@ export const authProvider: AuthProvider = {
     if (username) {
       loginUrl = "admin-login";
     }
-    const response = await fetch(`${API_URL ?? realAPI_URL}/${loginUrl}`, {
+    console.log(process.env);
+    const response = await fetch(`${API_URL}/${loginUrl}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ export const authProvider: AuthProvider = {
       localStorage.setItem("tempToken", data.temp_access);
       useStore.getState().setOrganizations(data.organizations);
       if (data.organizations.length == 1) {
-        const response = await fetch(`${API_URL ?? realAPI_URL}/authenticate`, {
+        const response = await fetch(`${API_URL}/authenticate`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -115,7 +115,7 @@ export const authProvider: AuthProvider = {
     }
   },
   register: async ({ token, username, password, first_name, last_name }) => {
-    const response = await fetch(`${API_URL ?? realAPI_URL}/register`, {
+    const response = await fetch(`${API_URL}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -142,7 +142,7 @@ export const authProvider: AuthProvider = {
     }
   },
   updatePassword: async ({ token, new_password }) => {
-    const response = await fetch(`${API_URL ?? realAPI_URL}/password-reset`, {
+    const response = await fetch(`${API_URL}/password-reset`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -166,7 +166,7 @@ export const authProvider: AuthProvider = {
     }
   },
   forgotPassword: async ({ email }) => {
-    const response = await fetch(`${API_URL ?? realAPI_URL}/password-request`, {
+    const response = await fetch(`${API_URL}/password-request`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -204,27 +204,6 @@ export const authProvider: AuthProvider = {
   check: async () => {
     const queryParams = new URLSearchParams(window.location.search);
     if (queryParams.get("accept_license_token")) {
-      // const token = queryParams.get("accept_license_token");
-      // const response = await fetch(`${API_URL ?? realAPI_URL}/validate-token`, {
-      //   method: "GET",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     Authorization: `Bearer ${token}`,
-      //   },
-      // });
-      // if (response.ok) {
-      //   return {
-      //     authenticated: false,
-      //     redirectTo:
-      //       "/terms-conditions?token=" +
-      //       queryParams.get("accept_license_token"),
-      //   };
-      // } else {
-      //   return {
-      //     authenticated: false,
-      //     redirectTo: "/link-expired",
-      //   };
-      // }
       return {
         authenticated: false,
         redirectTo:
@@ -244,7 +223,7 @@ export const authProvider: AuthProvider = {
         redirectTo: "/auth/reset-password?reset=" + queryParams.get("reset"),
       };
     }
-    const response = await fetch(`${API_URL ?? realAPI_URL}/token/refresh`, {
+    const response = await fetch(`${API_URL}/token/refresh`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -276,7 +255,7 @@ export const authProvider: AuthProvider = {
   getIdentity: async () => {
     const user: User | null = useStore.getState().user ?? null;
     if (!user) {
-      const response = await fetch(`${API_URL ?? realAPI_URL}/user`, {
+      const response = await fetch(`${API_URL}/user`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

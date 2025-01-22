@@ -1,13 +1,12 @@
 "use client";
 
-import { Asset, Transaction } from "@/types/types";
+import { Transaction } from "@/types/types";
 import GenericTable from "@components/Table/GenericTable";
-import { TxtActionColor, TxtStatusColor, TxtTypeColor } from "@data/ColorData";
+import { TxtStatusColor } from "@data/ColorData";
 import { tagStyle } from "@data/MuiStyles";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { Box } from "@mui/material";
 import { MRT_SortingState, type MRT_ColumnDef } from "material-react-table";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   convertSortingStateToCrudSort,
   getFormattedDate,

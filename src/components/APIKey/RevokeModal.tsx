@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { Box, Button, Modal, TextField } from "@mui/material";
 import { APIKey } from "../../types/types";
 import { modalCancelBtnStyle, modalOkBtnStyle } from "@data/MuiStyles";
-import GeneralSwitch from "@components/Input/GeneralSwitch";
-import { red } from "@mui/material/colors";
 
 interface CreateModalProps {
   openModal: boolean;
@@ -14,7 +12,7 @@ interface CreateModalProps {
 }
 
 const modalStyle = {
-  position: "absolute" as "absolute",
+  position: "absolute" as const,
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",

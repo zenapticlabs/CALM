@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import SidebarDropdown from "@/components/Sidebar/SidebarDropdown";
 import { usePathname } from "next/navigation";
 import { Button } from "@mui/material";
-import Link from "next/link";
 
 const SidebarItem = ({ item, pageName, setPageName }: any) => {
   const handleClick = () => {

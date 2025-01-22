@@ -1,7 +1,6 @@
 import { FieldConfig } from "@components/Forms/FormControlWrapper";
 import { InitialFieldConfig } from "@components/Forms/InitialFieldConfig";
 import { CrudSort } from "@refinedev/core";
-import { Customer } from "../types/types";
 import { format } from "date-fns";
 import { MRT_SortingState } from "material-react-table";
 import { matchIsValidTel } from "mui-tel-input";
@@ -195,7 +194,7 @@ export const getEndDate = (startDate: Date, str: string) => {
 };
 
 export const getInputCustomer = (data: any, type: string) => {
-  let value: { [key: string]: any } = {};
+  const value: { [key: string]: any } = {};
   Object.keys(data).forEach((key) => {
     value[type + key] = data[key] ? data[key] : "";
   });

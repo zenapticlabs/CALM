@@ -1,6 +1,5 @@
 import { Reference } from "../../../types/types";
 import { GenericFormProps } from "../FormControlWrapper";
-import GenericForm from "../GenericForm";
 // import ReferenceFormFields from "./ReferenceFormFields";
 
 export type ReferenceFormProps = GenericFormProps & {

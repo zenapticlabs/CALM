@@ -1,14 +1,8 @@
 "use client";
 import { ApexOptions } from "apexcharts";
 
-import dateRangeStyle from "./style.css";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { DateRangePicker, Stack } from "rsuite";
-import { predefinedStyle, predefinedRanges } from "@data/UtilData";
-import { subDays } from "date-fns";
-import { useList } from "@refinedev/core";
-import Loader from "@components/common/Loader";
 import {
   getDayStrings,
   getMonthStrings,
@@ -27,7 +21,7 @@ const options: ApexOptions = {
     position: "top",
     horizontalAlign: "left",
   },
-  colors: ["#3c50e0", "#dc3545", "#6c757d"],
+  colors: ["#3c50e0", "#dc3545", "#fac107", "#6c757d"],
   chart: {
     fontFamily: "Satoshi, sans-serif",
     height: 335,
@@ -89,7 +83,7 @@ const options: ApexOptions = {
   markers: {
     size: 4,
     colors: "#fff",
-    strokeColors: ["#3c50e0", "#dc3545", "#6c757d"],
+    strokeColors: ["#3c50e0", "#dc3545", "#fac107", "#6c757d"],
     strokeWidth: 3,
     strokeOpacity: 0.9,
     strokeDashArray: 0,
@@ -142,7 +136,7 @@ const ChartOne: React.FC<ChatOneProps> = ({
 
   useEffect(() => {
     if (data) {
-      const states = ["Completed", "Error", "Null"];
+      const states = ["Completed", "Error", "Waiting for Acceptance"];
       let dateArray = states.map((state) => ({
         name: state,
         data: Array(yAxis?.length).fill(0),
@@ -155,7 +149,7 @@ const ChartOne: React.FC<ChatOneProps> = ({
           realData.find(
             (item: any) =>
               item.status === state ||
-              (item.status === null && state === "Null")
+              (item.status === null && state === "N/A")
           )?.data || Array(yAxis?.length).fill(0),
       }));
       setSeries(dateArray);

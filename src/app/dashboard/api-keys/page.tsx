@@ -4,7 +4,7 @@ import { Box, Modal, SnackbarCloseReason } from "@mui/material";
 
 import { useCreate, useList, useUpdate } from "@refinedev/core";
 import { APIKey } from "@/types/types";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { MRT_ColumnDef } from "material-react-table";
 import { ProductActiveColor } from "@data/ColorData";
 import CheckBoxRoundedIcon from "@mui/icons-material/CheckBoxRounded";

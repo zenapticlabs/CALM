@@ -1,13 +1,11 @@
 "use client";
 
-import { Asset, InputTransaction, Seat, Transaction } from "@/types/types";
+import { Asset, InputTransaction, Transaction } from "@/types/types";
 import {
   useBack,
-  useCreate,
   useNavigation,
   useOne,
   useParsed,
-  useShow,
   useUpdate,
 } from "@refinedev/core";
 import ArrowIcon from "@/assets/icons/arrow.svg?icon";

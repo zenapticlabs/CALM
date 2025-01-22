@@ -1,5 +1,4 @@
 import { getRealFormFields } from "@utils/utilFunctions";
-import { FieldConfig } from "../FormControlWrapper";
 import { InitialFieldConfig } from "../InitialFieldConfig";
 
 const InitialField: InitialFieldConfig[] = [

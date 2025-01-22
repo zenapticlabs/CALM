@@ -1,6 +1,5 @@
 import { ReferenceCode } from "../../../types/types";
 import { GenericFormProps } from "../FormControlWrapper";
-import GenericForm from "../GenericForm";
 
 export type ReferenceCodeFormProps = GenericFormProps & {
   referenceCode?: ReferenceCode;

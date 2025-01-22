@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useCreate, useGetIdentity, useTable } from "@refinedev/core";
 import { Organization, Role, User } from "@/types/types";
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import DoDisturbOnOutlinedIcon from "@mui/icons-material/DoDisturbOnOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { modalOkBtnStyle } from "@data/MuiStyles";
@@ -104,7 +104,7 @@ const MemeberInvitePanel: React.FC<MemeberInvitePanelProps> = ({
       <Box
         sx={{
           width: "70%",
-          position: "absolute" as "absolute",
+          position: "absolute" as const,
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",

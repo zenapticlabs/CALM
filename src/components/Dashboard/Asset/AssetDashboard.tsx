@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import ChartOne from "./ChartOne";
 import dynamic from "next/dynamic";
 const ChartThree = dynamic(() => import("./ChartThree"), {
@@ -9,18 +9,13 @@ const ChartThree = dynamic(() => import("./ChartThree"), {
 import "./style.scss";
 // import { ShadowDom } from "react-shadow";
 
-import { DateRangePicker, Stack } from "rsuite";
+import { DateRangePicker } from "rsuite";
 import { subDays } from "date-fns";
 import { predefinedRanges } from "@data/UtilData";
 import {
   FaCalendar,
-  FaCalendarWeek,
-  FaCalendarDay,
-  FaCalendarCheck,
-  FaClock,
 } from "react-icons/fa";
 import { useList } from "@refinedev/core";
-import Loader from "@components/common/Loader";
 import { CircularProgress } from "@mui/material";
 
 const AssetDashboard: React.FC = () => {

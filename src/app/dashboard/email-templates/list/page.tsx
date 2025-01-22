@@ -5,7 +5,7 @@ import React, { useMemo } from "react";
 import { EmailTemplate } from "@/types/types";
 import Loader from "@components/common/Loader";
 import GenericTable from "@components/Table/GenericTable";
-import { MRT_ColumnDef, MRT_SortingState } from "material-react-table";
+import { MRT_ColumnDef } from "material-react-table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,7 +48,7 @@ const Page = () => {
       {
         accessorKey: "type",
         header: "Type",
-        size: 100,
+        size: 50,
       },
       {
         accessorKey: "event_type",
@@ -56,14 +56,19 @@ const Page = () => {
         size: 150,
       },
       {
+        accessorKey: "product_type",
+        header: "Product Type",
+        size: 150,
+      },
+      {
         accessorKey: "subject",
         header: "Subject",
-        size: 200,
+        size: 300,
       },
       {
         accessorKey: "description",
         header: "Description",
-        size: 200,
+        size: 350,
       },
     ],
     []
