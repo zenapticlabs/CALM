@@ -5,11 +5,8 @@ import SubmitIcon from "../../assets/icons/submitIcon.svg"
 import Image from "next/image";
 import Bolt from "../../assets/icons/bolt.svg";
 
-const config = {
-  
-  initialMessages: [createChatBotMessage(`Hey there! I'm Jarvis, your AI assistant. How can I help you today?`), 
-  ],
-  
+const config = {  
+  initialMessages: [createChatBotMessage(`Hey there! I'm Jarvis, your AI assistant. How can I help you today?`)],  
   customStyles: {
     userMessageBox:{
       backgroundColor: '#fffff',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from "react";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const Loader = () => (
@@ -9,7 +9,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     </div>
   );
 
-
   const messageSetter = (reply) => {
     const botMessage = createChatBotMessage(reply);
     setState((prev) => ({
@@ -18,10 +17,34 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   };
 
   const callGPT = async (message) => {
-    messageSetter(<Loader />);
+    if (message.trim().length === 0) {
+      messageSetter("Please enter a valid message.");
+      return;
+    }
+
+    const token = localStorage.getItem("accessToken");
+    const realAPI_URL = "https://license-management-server.vercel.app/api";
+    const API_URL = process.env.API_URL || realAPI_URL;
+
     try {
-      // will replace it it with actual API call.
-      const reply="Thank you for your message. I will get back to you soon.";
+      messageSetter(<Loader />);
+
+      const response = await fetch(`${API_URL}/chatbot`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ question: message }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const chatbotResponse = await response.json();
+      const reply = chatbotResponse.answer || "No response from AI";
+
       const botMessage = createChatBotMessage(reply);
       setState((prev) => {
         const updatedMessages = [...prev.messages];
@@ -30,12 +53,20 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         return { messages: updatedMessages };
       });
     } catch (error) {
-      setLoading(false);
-      messageSetter("Sorry, there was an error while fetching the response.");      
+      const errorMessage = error.response
+        ? error.response.data?.message || error.message
+        : "Sorry, there was an error while fetching the response.";
+
+      const botMessage = createChatBotMessage(errorMessage);
+      setState((prev) => {
+        const updatedMessages = [...prev.messages];
+        updatedMessages.pop();
+        updatedMessages.push(botMessage);
+        return { messages: updatedMessages };
+      });
     }
   };
 
- 
   return (
     <div>
       {React.Children.map(children, (child) => {
